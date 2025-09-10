@@ -7,7 +7,7 @@ export default async function handler(request, response) {
   }
 
   // Initialize Ably with your private API key
-  const ably = new Ably.Rest({ key: process.env.8pVyrQ.fm5BfQ:DUghAiJlDM3bzn-Og7Z0_CH3_blvg36FovVNHpowNug });
+  const ably = new Ably.Rest({ key: process.env.ABLY_API_KEY });
 
   // Get the data from the base44 webhook
   const webhookPayload = request.body;
@@ -31,4 +31,5 @@ export default async function handler(request, response) {
     console.error('Ably error:', error);
     return response.status(500).json({ error: 'Failed to publish to Ably' });
   }
+
 }
